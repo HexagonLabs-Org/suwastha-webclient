@@ -1,0 +1,43 @@
+/* Add this to your global styles or a component-specific CSS file */
+
+.container-fluid {
+    height: 100vh;
+    overflow: hidden; /* Hide overflow from the container */
+  }
+  
+  .row.col-md-12.bg-dark {
+    position: fixed; /* Fix the top bar in place */
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50px; /* Adjust the height as needed */
+    z-index: 1000; /* Ensure it's above other content */
+  }
+  
+  .row {
+    margin-top: 50px; /* Offset for the fixed top bar */
+    height: calc(100vh - 50px); /* Adjust the height for the main content area */
+  }
+  
+  .col-md-3 {
+    position: fixed; /* Fix the sidebar in place */
+    top: 50px; /* Offset for the fixed top bar */
+    left: 0;
+    bottom: 0;
+    width: 250px; /* Adjust the width as needed */
+    overflow-y: auto; /* Add vertical scrollbar to the sidebar if needed */
+  }
+  
+  .col-md-9 {
+    position: absolute;
+    top: 50px; /* Offset for the fixed top bar */
+    right: 0;
+    bottom: 0;
+    left: 250px; /* Adjust the left offset to match the sidebar width */
+    overflow-y: auto; /* Add vertical scrollbar to the main content area */
+  }
+  
+  .main-content {
+    padding: 20px; /* Add padding as needed */
+  }
+  
