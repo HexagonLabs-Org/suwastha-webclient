@@ -1,0 +1,33 @@
+<div class="container">
+    <h2>List of Patients</h2>
+    <a class="btn btn-primary" [routerLink]="['/home/patients/add']">Create New</a>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Patient ID</th>
+          <th>Name</th>
+          <th>Gender</th>
+          <th>Date of Birth</th>
+          <th>Address</th>
+          <th>Email</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let patient of patients">
+          <td>{{ patient.patientID }}</td>
+          <td>{{ patient.name }}</td>
+          <td>{{ patient.gender }}</td>
+          <td>{{ patient.dob | date: 'shortDate' }}</td>
+          <td>{{ patient.address }}</td>
+          <td>{{ patient.email }}</td>
+          <td>
+            <a class="btn btn-sm btn-info" [routerLink]="['/home/patients/details', patient.id]">View</a>
+            <a class="btn btn-sm btn-warning" [routerLink]="['/home/patients/edit', patient.id]">Edit</a>
+            <button class="btn btn-sm btn-danger" (click)="deletePatient(patient)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

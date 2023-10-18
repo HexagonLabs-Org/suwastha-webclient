@@ -1,0 +1,109 @@
+<div class="container mt-4">
+    <h1 class="text-primary">Patient Profile</h1>
+    <hr class="bg-primary">
+
+    <!-- Button Row -->
+    <div class="row mt-3">
+        <div class="col-12 text-center">
+            <a routerLink="/home/patients" class="btn btn-primary mr-2">
+                Back to List
+            </a>
+            <a routerLink="/home/patients/edit/{{ patient.id }}" class="btn btn-warning mr-2">
+                Edit
+            </a>
+            <button (click)="deletePatient()" class="btn btn-danger">
+                Delete
+            </button>
+        </div>
+    </div>
+
+    <!-- Patient Information Card with Fade-in Animation -->
+    <div class="card mb-4 animate__animated animate__fadeIn">
+        <div class="card-header bg-primary text-white">
+            <h2>Patient Information</h2>
+        </div>
+        <div class="card-body">
+            <dl class="row">
+                <dt class="col-sm-4 text-secondary">ID:</dt>
+                <dd class="col-sm-8">{{ patient.id }}</dd>
+
+                <dt class="col-sm-4 text-secondary">Patient ID:</dt>
+                <dd class="col-sm-8">{{ patient.patientID }}</dd>
+
+                <dt class="col-sm-4 text-secondary">RFID:</dt>
+                <dd class="col-sm-8">{{ patient.rfid || 'N/A' }}</dd>
+
+                <dt class="col-sm-4 text-secondary">NIC:</dt>
+                <dd class="col-sm-8">{{ patient.nic || 'N/A' }}</dd>
+
+                <dt class="col-sm-4 text-secondary">Title:</dt>
+                <dd class="col-sm-8">{{ patient.title || 'N/A' }}</dd>
+
+                <dt class="col-sm-4 text-secondary">Name:</dt>
+                <dd class="col-sm-8">{{ patient.name || 'N/A' }}</dd>
+
+                <dt class="col-sm-4 text-secondary">Gender:</dt>
+                <dd class="col-sm-8">{{ patient.gender || 'N/A' }}</dd>
+
+                <dt class="col-sm-4 text-secondary">Date of Birth:</dt>
+                <dd class="col-sm-8">{{ patient.dob | date: 'MM/dd/yyyy' }}</dd>
+
+                <dt class="col-sm-4 text-secondary">Age:</dt>
+                <dd class="col-sm-8">
+                    <ng-container *ngIf="calculateAge(patient.dob) as ageParts">
+                        <span [ngStyle]="{ color: ageParts[0] ? 'blue' : 'gray' }">{{ ageParts[0] || 'N/A' }}</span><br>
+                        <span [ngStyle]="{ color: ageParts[1] ? 'green' : 'gray' }">{{ ageParts[1] || 'N/A' }}</span><br>
+                        <span [ngStyle]="{ color: ageParts[2] ? 'red' : 'gray' }">{{ ageParts[2] || 'N/A' }}</span><br>
+                    </ng-container>
+                </dd>
+            </dl>
+        </div>
+    </div>
+
+    <!-- Contact Information Card with Fade-in Animation -->
+    <div class="card mb-4 animate__animated animate__fadeIn">
+        <div class="card-header bg-info text-white">
+            <h2>Contact Information</h2>
+        </div>
+        <div class="card-body">
+            <dl class="row">
+                <dt class="col-sm-4 text-secondary">Address:</dt>
+                <dd class="col-sm-8">{{ patient.address || 'N/A' }}</dd>
+
+                <dt class="col-sm-4 text-secondary">Telephone:</dt>
+                <dd class="col-sm-8">{{ patient.tp || 'N/A' }}</dd>
+
+                <dt class="col-sm-4 text-secondary">Mobile 1:</dt>
+                <dd class="col-sm-8">{{ patient.mobile1 || 'N/A' }}</dd>
+
+                <dt class="col-sm-4 text-secondary">Mobile 2:</dt>
+                <dd class="col-sm-8">{{ patient.mobile2 || 'N/A' }}</dd>
+
+                <dt class="col-sm-4 text-secondary">Email:</dt>
+                <dd class="col-sm-8">{{ patient.email || 'N/A' }}
+            </dl>
+        </div>
+    </div>
+
+    <!-- Health Information Card with Fade-in Animation -->
+    <div class="card mb-4 animate__animated animate__fadeIn">
+        <div class="card-header bg-success text-white">
+            <h2>Health Information</h2>
+        </div>
+        <div class="card-body">
+            <dl class="row">
+                <dt class="col-sm-4 text-secondary">Emergency Contact Number:</dt>
+                <dd class="col-sm-8">{{ patient.emergencyContactNumber || 'N/A' }}
+
+                <dt class="col-sm-4 text-secondary">Blood Group:</dt>
+                <dd class="col-sm-8">{{ patient.bloodGroup || 'N/A' }}
+
+                <dt class="col-sm-4 text-secondary">Is Inpatient:</dt>
+                <dd class="col-sm-8">{{ patient.isInpatient ? 'Yes' : 'No' }}
+
+                <dt class="col-sm-4 text-secondary">Vital Status:</dt>
+                <dd class="col-sm-8">{{ patient.vitalStatus || 'N/A' }}
+            </dl>
+        </div>
+    </div>
+</div>
