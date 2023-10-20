@@ -15,6 +15,10 @@ import { PatientListComponent } from './components/patient-CRUD/patient-list/pat
 import { PatientDetailsComponent } from './components/patient-CRUD/patient-details/patient-details.component';
 import { PatientAddComponent } from './components/patient-CRUD/patient-add/patient-add.component';
 import { PatientEditComponent } from './components/patient-CRUD/patient-edit/patient-edit.component';
+import { DoctorAddComponent } from './components/doctor-CRUD/doctor-add/doctor-add.component';
+import { DoctorDetailsComponent } from './components/doctor-CRUD/doctor-details/doctor-details.component';
+import { DoctorEditComponent } from './components/doctor-CRUD/doctor-edit/doctor-edit.component';
+import { DoctorListComponent } from './components/doctor-CRUD/doctor-list/doctor-list.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +32,11 @@ import { PatientEditComponent } from './components/patient-CRUD/patient-edit/pat
     PatientListComponent,
     PatientDetailsComponent,
     PatientAddComponent,
-    PatientEditComponent
+    PatientEditComponent,
+    DoctorAddComponent,
+    DoctorDetailsComponent,
+    DoctorEditComponent,
+    DoctorListComponent
   ],
   imports: [
     BrowserModule,

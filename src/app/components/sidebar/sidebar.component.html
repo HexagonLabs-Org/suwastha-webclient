@@ -1,17 +1,9 @@
 <div class="sidebar">
   <ul class="list-group">
-    <li class="list-group-item">
-      <a routerLink="/home" class="nav-link">Dashboard</a>
+    <div *ngFor="let link of links">
+      <li class="list-group-item" *ngIf="link.havePrivilegeToUser">
+        <a [routerLink]="link.route" class="nav-link">{{ link.text }}</a>
     </li>
-    <li class="list-group-item">
-      <a routerLink="/home/profile" class="nav-link">Profile</a>
-    </li>
-    <li class="list-group-item">
-      <a routerLink="/home/settings" class="nav-link">Settings</a>
-    </li>
-    <li class="list-group-item">
-      <a routerLink="/home/patients" class="nav-link">Patients</a>
-    </li>
-    <!-- ... additional sidebar links ... -->
+    </div>
   </ul>
 </div>

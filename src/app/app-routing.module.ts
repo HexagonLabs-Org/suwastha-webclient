@@ -9,6 +9,10 @@ import { PatientListComponent } from './components/patient-CRUD/patient-list/pat
 import { PatientAddComponent } from './components/patient-CRUD/patient-add/patient-add.component';
 import { PatientDetailsComponent } from './components/patient-CRUD/patient-details/patient-details.component';
 import { PatientEditComponent } from './components/patient-CRUD/patient-edit/patient-edit.component';
+import { DoctorListComponent } from './components/doctor-CRUD/doctor-list/doctor-list.component';
+import { DoctorAddComponent } from './components/doctor-CRUD/doctor-add/doctor-add.component';
+import { DoctorDetailsComponent } from './components/doctor-CRUD/doctor-details/doctor-details.component';
+import { DoctorEditComponent } from './components/doctor-CRUD/doctor-edit/doctor-edit.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -22,8 +26,12 @@ const routes: Routes = [
       { path: 'settings', component: SettingsComponent },
       { path: 'patients', component: PatientListComponent },
       { path: 'patients/add', component: PatientAddComponent },
+      { path: 'patients/edit/:id', component: PatientEditComponent },
       { path: 'patients/details/:id', component: PatientDetailsComponent },
-      { path: 'patients/edit/:id', component: PatientEditComponent }
+      { path: 'doctors', component: DoctorListComponent },
+      { path: 'doctors/add', component: DoctorAddComponent },
+      { path: 'doctors/edit/:id', component: DoctorEditComponent },
+      { path: 'doctors/details/:id', component: DoctorDetailsComponent }
     ]
   }
 ];
