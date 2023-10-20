@@ -1,1 +1,41 @@
-<p>doctor-list works!</p>
+<div class="container">
+    <h2>List of Doctors</h2>
+    <a class="btn btn-primary" [routerLink]="['/home/doctors/add']">Create New</a>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Doctor ID</th>
+          <th>Name</th>
+          <th>Specialty</th>
+          <th>Education</th>
+          <th>Gender</th>
+          <th>Date of Birth</th>
+          <th>TP</th>
+          <th>Mobile 1</th>
+          <th>Mobile 2</th>
+          <th>Email</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let doctor of doctors">
+          <td>{{ doctor.doctorID }}</td>
+          <td>{{ doctor.name }}</td>
+          <td>{{ doctor.specialty }}</td>
+          <td>{{ doctor.education }}</td>
+          <td>{{ doctor.gender }}</td>
+          <td>{{ doctor.dob | date: 'shortDate' }}</td>
+          <td>{{ doctor.tp }}</td>
+          <td>{{ doctor.mobile1 }}</td>
+          <td>{{ doctor.mobile2 }}</td>
+          <td>{{ doctor.email }}</td>
+          <td>
+            <a class="btn btn-sm btn-info" [routerLink]="['/home/doctors/details', doctor.id]">View</a>
+            <a class="btn btn-sm btn-warning" [routerLink]="['/home/doctors/edit', doctor.id]">Edit</a>
+            <button class="btn btn-sm btn-danger" (click)="deleteDoctor(doctor)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
