@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { Patient } from '../Models/Entities/patient.model';
 import { UpdatePatientRequest } from '../Models/DTOs/update-patient-request.model';
 import { AddPatientRequest } from '../Models/DTOs/add-patient-request.model';
@@ -9,7 +10,7 @@ import { AddPatientRequest } from '../Models/DTOs/add-patient-request.model';
   providedIn: 'root'
 })
 export class PatientService {
-  private apiUrl = 'http://suwasthaservice-001-site1.htempurl.com/Patient'; // Update this to your API endpoint
+  private apiUrl = environment.apiUrl + '/Patient'; // Update this to your API endpoint
 
   constructor(private http: HttpClient) { }
 
