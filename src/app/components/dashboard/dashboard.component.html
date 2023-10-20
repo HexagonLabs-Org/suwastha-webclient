@@ -1,20 +1,17 @@
-<div class="container">
-<!-- <header>
-  <app-topbar></app-topbar>
-</header> -->
-  <div class="row">
-    <!-- Sidebar -->
-    <div class="col-md-3">
-      <!-- Sidebar content goes here -->
-      <app-sidebar></app-sidebar>
-    </div>
-    <!-- Main Content -->
-    <div class="col-md-9">
-      <!-- Main content goes here -->
-      <div class="main-content">
-        <!-- Content that should be scrollable -->
+<div class="row h-100">
+  <div class="col-3 side-nav h-100 d-flex flex-column">
+      logo
+      <div class="flex-grow-1">
+        <app-sidebar></app-sidebar>
+      </div>
+      <div>footer</div>
+  </div>
+  <div class="col-9 header-container h-100">
+      <div class="header-area">
+        <app-topbar></app-topbar>
+      </div>
+      <div class="full-body">
         <router-outlet></router-outlet>
       </div>
-    </div>
   </div>
 </div>
