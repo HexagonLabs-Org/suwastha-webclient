@@ -6,7 +6,10 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "ng-servicefor": "node -e \"require('child_process').execSync('ng generate service services/' + process.argv[1], { stdio: [0, 1, 2] });\"",
+    "ng-componentsfor": "node -e \"require('child_process').execSync('ng generate component components/' + process.argv[1] + '-CRUD/' + process.argv[1] + '-add', { stdio: [0, 1, 2] }); require('child_process').execSync('ng generate component components/' + process.argv[1] + '-CRUD/' + process.argv[1] + '-details', { stdio: [0, 1, 2] }); require('child_process').execSync('ng generate component components/' + process.argv[1] + '-CRUD/' + process.argv[1] + '-edit', { stdio: [0, 1, 2] }); require('child_process').execSync('ng generate component components/' + process.argv[1] + '-CRUD/' + process.argv[1] + '-list', { stdio: [0, 1, 2] });\"",
+    "ng-modelsfor": "node -e \"const entityName = process.argv[1]; require('child_process').execSync('ng generate interface models/entities/' + entityName + '.model', { stdio: [0, 1, 2] }); require('child_process').execSync('ng generate interface models/DTOs/add-' + entityName + '-request.model', { stdio: [0, 1, 2] }); require('child_process').execSync('ng generate interface models/DTOs/update-' + entityName + '-request.model', { stdio: [0, 1, 2] });\""
   },
   "private": true,
   "dependencies": {
