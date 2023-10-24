@@ -34,6 +34,18 @@ import { ClinicSessionListComponent } from './components/CRUDComponents/ClinicSe
 import { OPDSessionLayoutComponent } from './components/LayoutComponents/opdsession-layout/opdsession-layout.component';
 import { ClinicsessionLayoutComponent } from './components/LayoutComponents/clinicsession-layout/clinicsession-layout.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ClinicBookAddComponent } from './components/CRUDComponents/ClinicBook-CRUD/clinic-book-add/clinic-book-add.component';
+import { ClinicBookDetailsComponent } from './components/CRUDComponents/ClinicBook-CRUD/clinic-book-details/clinic-book-details.component';
+import { ClinicBookEditComponent } from './components/CRUDComponents/ClinicBook-CRUD/clinic-book-edit/clinic-book-edit.component';
+import { ClinicBookListComponent } from './components/CRUDComponents/ClinicBook-CRUD/clinic-book-list/clinic-book-list.component';
+import { PageAddComponent } from './components/CRUDComponents/Page-CRUD/page-add/page-add.component';
+import { PageDetailsComponent } from './components/CRUDComponents/Page-CRUD/page-details/page-details.component';
+import { PageEditComponent } from './components/CRUDComponents/Page-CRUD/page-edit/page-edit.component';
+import { PageListComponent } from './components/CRUDComponents/Page-CRUD/page-list/page-list.component';
+import { AdmissionAddComponent } from './components/CRUDComponents/Admission-CRUD/admission-add/admission-add.component';
+import { AdmissionDetailsComponent } from './components/CRUDComponents/Admission-CRUD/admission-details/admission-details.component';
+import { AdmissionEditComponent } from './components/CRUDComponents/Admission-CRUD/admission-edit/admission-edit.component';
+import { AdmissionListComponent } from './components/CRUDComponents/Admission-CRUD/admission-list/admission-list.component';
 
 @NgModule({
   declarations: [
@@ -66,6 +78,18 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ClinicSessionListComponent,
     OPDSessionLayoutComponent,
     ClinicsessionLayoutComponent,
+    ClinicBookAddComponent,
+    ClinicBookDetailsComponent,
+    ClinicBookEditComponent,
+    ClinicBookListComponent,
+    PageAddComponent,
+    PageDetailsComponent,
+    PageEditComponent,
+    PageListComponent,
+    AdmissionAddComponent,
+    AdmissionDetailsComponent,
+    AdmissionEditComponent,
+    AdmissionListComponent,
   ],
   imports: [
     BrowserModule,
