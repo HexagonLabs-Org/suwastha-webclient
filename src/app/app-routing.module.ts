@@ -20,6 +20,9 @@ import { ClinicsessionLayoutComponent } from './components/LayoutComponents/clin
 import { OPDSessionLayoutComponent } from './components/LayoutComponents/opdsession-layout/opdsession-layout.component';
 import { OPDSessionDetailsComponent } from './components/CRUDComponents/OPDSession-CRUD/opdsession-details/opdsession-details.component';
 import { ClinicSessionDetailsComponent } from './components/CRUDComponents/ClinicSession-CRUD/clinic-session-details/clinic-session-details.component';
+import { ClinicBookAddComponent } from './components/CRUDComponents/ClinicBook-CRUD/clinic-book-add/clinic-book-add.component';
+import { ClinicBookDetailsComponent } from './components/CRUDComponents/ClinicBook-CRUD/clinic-book-details/clinic-book-details.component';
+import { PageAddComponent } from './components/CRUDComponents/Page-CRUD/page-add/page-add.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -47,7 +50,8 @@ const routes: Routes = [
     children : [
       { path: '', redirectTo: 'start', pathMatch: 'full' },
       { path: 'start', component: OPDSessionAddComponent },
-      { path: 'home', component: OPDSessionDetailsComponent },        
+      { path: ':id', component: OPDSessionDetailsComponent },
+      { path: ':id/Prescription-Writer', component: PrescriptionAddComponent },                
     ]
   },
   { 
@@ -56,7 +60,11 @@ const routes: Routes = [
     children : [
       { path: '', redirectTo: 'start', pathMatch: 'full' },
       { path: 'start', component: ClinicSessionAddComponent },  
-      { path: 'home', component: ClinicSessionDetailsComponent },      
+      { path: ':id', component: ClinicSessionDetailsComponent },
+      { path: ':id/Book/Create', component: ClinicBookAddComponent },      
+      { path: ':id/Book/:id', component: ClinicBookDetailsComponent },   
+      { path: ':id/Book/:id/New-Page', component: PageAddComponent },            
+         
     ]
   }
 ];
