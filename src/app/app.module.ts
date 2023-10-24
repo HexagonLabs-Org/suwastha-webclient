@@ -23,6 +23,17 @@ import { PrescriptionAddComponent } from './components/CRUDComponents/Prescripti
 import { PrescriptionDetailsComponent } from './components/CRUDComponents/Prescription-CRUD/prescription-details/prescription-details.component';
 import { PrescriptionEditComponent } from './components/CRUDComponents/Prescription-CRUD/prescription-edit/prescription-edit.component';
 import { PrescriptionListComponent } from './components/CRUDComponents/Prescription-CRUD/prescription-list/prescription-list.component';
+import { OPDSessionAddComponent } from './components/CRUDComponents/OPDSession-CRUD/opdsession-add/opdsession-add.component';
+import { OPDSessionDetailsComponent } from './components/CRUDComponents/OPDSession-CRUD/opdsession-details/opdsession-details.component';
+import { OPDSessionEditComponent } from './components/CRUDComponents/OPDSession-CRUD/opdsession-edit/opdsession-edit.component';
+import { OPDSessionListComponent } from './components/CRUDComponents/OPDSession-CRUD/opdsession-list/opdsession-list.component';
+import { ClinicSessionAddComponent } from './components/CRUDComponents/ClinicSession-CRUD/clinic-session-add/clinic-session-add.component';
+import { ClinicSessionDetailsComponent } from './components/CRUDComponents/ClinicSession-CRUD/clinic-session-details/clinic-session-details.component';
+import { ClinicSessionEditComponent } from './components/CRUDComponents/ClinicSession-CRUD/clinic-session-edit/clinic-session-edit.component';
+import { ClinicSessionListComponent } from './components/CRUDComponents/ClinicSession-CRUD/clinic-session-list/clinic-session-list.component';
+import { OPDSessionLayoutComponent } from './components/LayoutComponents/opdsession-layout/opdsession-layout.component';
+import { ClinicsessionLayoutComponent } from './components/LayoutComponents/clinicsession-layout/clinicsession-layout.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -44,13 +55,24 @@ import { PrescriptionListComponent } from './components/CRUDComponents/Prescript
     PrescriptionAddComponent,
     PrescriptionDetailsComponent,
     PrescriptionEditComponent,
-    PrescriptionListComponent
+    PrescriptionListComponent,
+    OPDSessionAddComponent,
+    OPDSessionDetailsComponent,
+    OPDSessionEditComponent,
+    OPDSessionListComponent,
+    ClinicSessionAddComponent,
+    ClinicSessionDetailsComponent,
+    ClinicSessionEditComponent,
+    ClinicSessionListComponent,
+    OPDSessionLayoutComponent,
+    ClinicsessionLayoutComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

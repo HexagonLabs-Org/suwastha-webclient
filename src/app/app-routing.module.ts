@@ -13,6 +13,13 @@ import { DoctorListComponent } from './components/CRUDComponents/doctor-CRUD/doc
 import { DoctorAddComponent } from './components/CRUDComponents/doctor-CRUD/doctor-add/doctor-add.component';
 import { DoctorDetailsComponent } from './components/CRUDComponents/doctor-CRUD/doctor-details/doctor-details.component';
 import { DoctorEditComponent } from './components/CRUDComponents/doctor-CRUD/doctor-edit/doctor-edit.component';
+import { PrescriptionAddComponent } from './components/CRUDComponents/Prescription-CRUD/prescription-add/prescription-add.component';
+import { OPDSessionAddComponent } from './components/CRUDComponents/OPDSession-CRUD/opdsession-add/opdsession-add.component';
+import { ClinicSessionAddComponent } from './components/CRUDComponents/ClinicSession-CRUD/clinic-session-add/clinic-session-add.component';
+import { ClinicsessionLayoutComponent } from './components/LayoutComponents/clinicsession-layout/clinicsession-layout.component';
+import { OPDSessionLayoutComponent } from './components/LayoutComponents/opdsession-layout/opdsession-layout.component';
+import { OPDSessionDetailsComponent } from './components/CRUDComponents/OPDSession-CRUD/opdsession-details/opdsession-details.component';
+import { ClinicSessionDetailsComponent } from './components/CRUDComponents/ClinicSession-CRUD/clinic-session-details/clinic-session-details.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -32,6 +39,24 @@ const routes: Routes = [
       { path: 'doctors/add', component: DoctorAddComponent },
       { path: 'doctors/edit/:id', component: DoctorEditComponent },
       { path: 'doctors/details/:id', component: DoctorDetailsComponent }
+    ]
+  },
+  { 
+    path: 'OPD-Session', 
+    component: OPDSessionLayoutComponent,
+    children : [
+      { path: '', redirectTo: 'start', pathMatch: 'full' },
+      { path: 'start', component: OPDSessionAddComponent },
+      { path: 'home', component: OPDSessionDetailsComponent },        
+    ]
+  },
+  { 
+    path: 'Clinic-Session', 
+    component: ClinicsessionLayoutComponent,
+    children : [
+      { path: '', redirectTo: 'start', pathMatch: 'full' },
+      { path: 'start', component: ClinicSessionAddComponent },  
+      { path: 'home', component: ClinicSessionDetailsComponent },      
     ]
   }
 ];
