@@ -2,10 +2,10 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-auth',
-  templateUrl: './auth.component.html',
-  styleUrls: ['./auth.component.css']
+  templateUrl: './MainLogin.component.html',
+  styleUrls: ['./MainLogin.component.css']
 })
-export class AuthComponent {
+export class MainLoginComponent {
 
   login(){
     localStorage.setItem('jwtToken', "");
