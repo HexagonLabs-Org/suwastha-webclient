@@ -7,13 +7,16 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
+    "ng-modelsfor": "node -e \"const entityName = process.argv[1]; require('child_process').execSync('ng generate interface models/entities/' + entityName + '.model', { stdio: [0, 1, 2] }); require('child_process').execSync('ng generate interface models/DTOs/add-' + entityName + '-request.model', { stdio: [0, 1, 2] }); require('child_process').execSync('ng generate interface models/DTOs/update-' + entityName + '-request.model', { stdio: [0, 1, 2] });\"",
     "ng-servicefor": "node -e \"require('child_process').execSync('ng generate service services/' + process.argv[1], { stdio: [0, 1, 2] });\"",
-    "ng-componentsfor": "node -e \"require('child_process').execSync('ng generate component components/' + process.argv[1] + '-CRUD/' + process.argv[1] + '-add', { stdio: [0, 1, 2] }); require('child_process').execSync('ng generate component components/' + process.argv[1] + '-CRUD/' + process.argv[1] + '-details', { stdio: [0, 1, 2] }); require('child_process').execSync('ng generate component components/' + process.argv[1] + '-CRUD/' + process.argv[1] + '-edit', { stdio: [0, 1, 2] }); require('child_process').execSync('ng generate component components/' + process.argv[1] + '-CRUD/' + process.argv[1] + '-list', { stdio: [0, 1, 2] });\"",
-    "ng-modelsfor": "node -e \"const entityName = process.argv[1]; require('child_process').execSync('ng generate interface models/entities/' + entityName + '.model', { stdio: [0, 1, 2] }); require('child_process').execSync('ng generate interface models/DTOs/add-' + entityName + '-request.model', { stdio: [0, 1, 2] }); require('child_process').execSync('ng generate interface models/DTOs/update-' + entityName + '-request.model', { stdio: [0, 1, 2] });\""
+    "ng-crud-c-4": "node -e \"require('child_process').execSync('ng generate component components/CRUDComponents/' + process.argv[1] + '-CRUD/' + process.argv[1] + '-add', { stdio: [0, 1, 2] }); require('child_process').execSync('ng generate component components/CRUDComponents/' + process.argv[1] + '-CRUD/' + process.argv[1] + '-details', { stdio: [0, 1, 2] }); require('child_process').execSync('ng generate component components/CRUDComponents/' + process.argv[1] + '-CRUD/' + process.argv[1] + '-edit', { stdio: [0, 1, 2] }); require('child_process').execSync('ng generate component components/CRUDComponents/' + process.argv[1] + '-CRUD/' + process.argv[1] + '-list', { stdio: [0, 1, 2] });\"",
+    "ng-layout-c-4": "node -e \"require('child_process').execSync('ng generate component components/LayoutComponents/' + process.argv[1] + '-layout', { stdio: [0, 1, 2] });\"",
+    "ng-auth-c-4": "node -e \"require('child_process').execSync('ng generate component components/AuthComponents/' + process.argv[1], { stdio: [0, 1, 2] });\""
   },
   "private": true,
   "dependencies": {
     "@angular/animations": "^16.1.0",
+    "@angular/cdk": "^16.2.9",
     "@angular/common": "^16.1.0",
     "@angular/compiler": "^16.1.0",
     "@angular/core": "^16.1.0",
@@ -21,6 +24,8 @@
     "@angular/platform-browser": "^16.1.0",
     "@angular/platform-browser-dynamic": "^16.1.0",
     "@angular/router": "^16.1.0",
+    "bootstrap": "^5.3.2",
+    "jquery": "^3.7.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"
