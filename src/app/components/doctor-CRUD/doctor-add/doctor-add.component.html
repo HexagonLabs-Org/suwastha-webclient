@@ -1,1 +1,67 @@
-<p>doctor-add works!</p>
+<form>
+    <!-- Title -->
+    <div class="mb-3">
+      <label for="title" class="form-label">Title</label>
+      <input type="text" class="form-control" id="title" [(ngModel)]="newDoctor.title" name="title" required>
+    </div>
+  
+    <!-- Name -->
+    <div class="mb-3">
+      <label for="name" class="form-label">Name</label>
+      <input type="text" class="form-control" id="name" [(ngModel)]="newDoctor.name" name="name" required>
+    </div>
+  
+    <!-- Specialty -->
+    <div class="mb-3">
+      <label for="specialty" class="form-label">Specialty</label>
+      <input type="text" class="form-control" id="specialty" [(ngModel)]="newDoctor.specialty" name="specialty" required>
+    </div>
+  
+    <!-- Education -->
+    <div class="mb-3">
+      <label for="education" class="form-label">Education</label>
+      <input type="text" class="form-control" id="education" [(ngModel)]="newDoctor.education" name="education" required>
+    </div>
+  
+    <!-- Gender -->
+    <div class="mb-3">
+      <label for="gender" class="form-label">Gender</label>
+      <select class="form-select" id="gender" [(ngModel)]="newDoctor.gender" name="gender" required>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+  
+    <!-- Date of Birth -->
+    <div class="mb-3">
+      <label for="dob" class="form-label">Date of Birth</label>
+      <input type="date" class="form-control" id="dob" [(ngModel)]="newDoctor.dob" name="dob" required>
+    </div>
+  
+    <!-- Telephone Number -->
+    <div class="mb-3">
+      <label for="tp" class="form-label">Telephone Number</label>
+      <input type="text" class="form-control" id="tp" [(ngModel)]="newDoctor.tp" name="tp" required>
+    </div>
+  
+    <!-- Mobile Number 1 -->
+    <div class="mb-3">
+      <label for="mobile1" class="form-label">Mobile Number 1</label>
+      <input type="text" class="form-control" id="mobile1" [(ngModel)]="newDoctor.mobile1" name="mobile1" required>
+    </div>
+  
+    <!-- Mobile Number 2 -->
+    <div class="mb-3">
+      <label for="mobile2" class="form-label">Mobile Number 2</label>
+      <input type="text" class="form-control" id="mobile2" [(ngModel)]="newDoctor.mobile2" name="mobile2">
+    </div>
+  
+    <!-- Email -->
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input type="email" class="form-control" id="email" [(ngModel)]="newDoctor.email" name="email" required>
+    </div>
+    <button type="button" class="btn btn-primary" (click)="addDoctor()">Add Doctor</button>
+  </form>
+  
