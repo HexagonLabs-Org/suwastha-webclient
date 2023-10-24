@@ -6,7 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthComponent } from './components/auth/auth.component';
-import { TopbarComponent } from './components/topbar/topbar.component';
+import { TopbarComponent } from './components/header/header.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ProfileComponent } from './components/profile/profile.component';
@@ -19,6 +19,10 @@ import { DoctorAddComponent } from './components/doctor-CRUD/doctor-add/doctor-a
 import { DoctorDetailsComponent } from './components/doctor-CRUD/doctor-details/doctor-details.component';
 import { DoctorEditComponent } from './components/doctor-CRUD/doctor-edit/doctor-edit.component';
 import { DoctorListComponent } from './components/doctor-CRUD/doctor-list/doctor-list.component';
+import { PrescriptionAddComponent } from './components/Prescription-CRUD/prescription-add/prescription-add.component';
+import { PrescriptionDetailsComponent } from './components/Prescription-CRUD/prescription-details/prescription-details.component';
+import { PrescriptionEditComponent } from './components/Prescription-CRUD/prescription-edit/prescription-edit.component';
+import { PrescriptionListComponent } from './components/Prescription-CRUD/prescription-list/prescription-list.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +40,11 @@ import { DoctorListComponent } from './components/doctor-CRUD/doctor-list/doctor
     DoctorAddComponent,
     DoctorDetailsComponent,
     DoctorEditComponent,
-    DoctorListComponent
+    DoctorListComponent,
+    PrescriptionAddComponent,
+    PrescriptionDetailsComponent,
+    PrescriptionEditComponent,
+    PrescriptionListComponent
   ],
   imports: [
     BrowserModule,

@@ -1,15 +1,3 @@
-html{
-  height: 100%;
-}
-
-body{
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  overflow: hidden;
-  height: 100%;
-}
-
 .header-area{
   height: 60px;
   background-color: red;
@@ -18,4 +6,17 @@ body{
 .full-body{
   overflow-y: auto;
   height: 100%;
+}
+
+.logo {
+  width: 100%; /* Set the width of the container */
+  height: 100px; /* Set the height of the container */
+  display: flex; /* Use flex layout to center the image (optional) */
+  justify-content: center; /* Center horizontally (optional) */
+  align-items: center; /* Center vertically (optional) */
+}
+
+.logo img {
+  max-width: 100%; /* Ensure the image doesn't exceed the container width */
+  max-height: 100%; /* Ensure the image doesn't exceed the container height */
 }

@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AuthComponent {
 
+  login(){
+    localStorage.setItem('jwtToken', "");
+  }
 }

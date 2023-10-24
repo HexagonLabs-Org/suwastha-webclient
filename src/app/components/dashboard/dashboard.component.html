@@ -1,17 +1,19 @@
 <div class="row h-100">
-  <div class="col-3 side-nav h-100 d-flex flex-column">
-      logo
-      <div class="flex-grow-1">
-        <app-sidebar></app-sidebar>
-      </div>
-      <div>footer</div>
+  <div class="col-2 side-nav h-100 d-flex flex-column bg-danger">
+    <div class="logo">
+      <img src="https://drive.google.com/uc?export=view&id=1K5mh7Su8gDn1GFndxA6ART_L6n6tQMFn" alt="Your Image Alt Text">
+    </div>    
+    <div class="flex-grow-1">
+      <app-sidebar></app-sidebar>
+    </div>
+    <div>footer</div>
   </div>
-  <div class="col-9 header-container h-100">
-      <div class="header-area">
-        <app-topbar></app-topbar>
-      </div>
-      <div class="full-body">
-        <router-outlet></router-outlet>
-      </div>
+  <div class="col-10 px-0 header-container h-100">
+    <div class="header-area">
+      <app-header></app-header>
+    </div>
+    <div class="full-body p-3">
+      <router-outlet></router-outlet>
+    </div>
   </div>
 </div>
