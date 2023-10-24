@@ -1,6 +1,7 @@
 export interface Doctor {
     id: string; 
     doctorID: string;
+    rfid?: string;
     title: string;
     name: string;
     specialty: string;

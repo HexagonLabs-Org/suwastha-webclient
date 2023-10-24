@@ -1,4 +1,5 @@
 export interface AddDoctorRequest {
+    rfid?: string;
     title: string;
     name: string;
     specialty: string;
