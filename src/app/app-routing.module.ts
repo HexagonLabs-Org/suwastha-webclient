@@ -23,6 +23,10 @@ import { ClinicSessionDetailsComponent } from './components/CRUDComponents/Clini
 import { ClinicBookAddComponent } from './components/CRUDComponents/ClinicBook-CRUD/clinic-book-add/clinic-book-add.component';
 import { ClinicBookDetailsComponent } from './components/CRUDComponents/ClinicBook-CRUD/clinic-book-details/clinic-book-details.component';
 import { PageAddComponent } from './components/CRUDComponents/Page-CRUD/page-add/page-add.component';
+import { AdmissionListComponent } from './components/CRUDComponents/Admission-CRUD/admission-list/admission-list.component';
+import { AdmissionAddComponent } from './components/CRUDComponents/Admission-CRUD/admission-add/admission-add.component';
+import { AdmissionEditComponent } from './components/CRUDComponents/Admission-CRUD/admission-edit/admission-edit.component';
+import { AdmissionDetailsComponent } from './components/CRUDComponents/Admission-CRUD/admission-details/admission-details.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -41,7 +45,11 @@ const routes: Routes = [
       { path: 'doctors', component: DoctorListComponent },
       { path: 'doctors/add', component: DoctorAddComponent },
       { path: 'doctors/edit/:id', component: DoctorEditComponent },
-      { path: 'doctors/details/:id', component: DoctorDetailsComponent }
+      { path: 'doctors/details/:id', component: DoctorDetailsComponent },
+      { path: 'admissions', component: AdmissionListComponent },
+      { path: 'admissions/add', component: AdmissionAddComponent },
+      { path: 'admissions/edit/:id', component: AdmissionEditComponent },
+      { path: 'admissions/details/:id', component: AdmissionDetailsComponent }
     ]
   },
   { 
