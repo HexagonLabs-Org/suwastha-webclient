@@ -1,18 +1,38 @@
-/* You can add global styles to this file, and also import other style files */
-@import '~bootstrap/dist/css/bootstrap.css';
-html{
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    font-family: Roboto, "Helvetica Neue", sans-serif; 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    --light: #f6f6f9;
+    --primary: #1976D2;
+    --light-primary: #CFE8FF;
+    --grey: #eee;
+    --dark-grey: #AAAAAA;
+    --dark: #363949;
+    --danger: #D32F2F;
+	--light-danger: #FECDD3;
+    --warning: #FBC02D;
+    --light-warning: #FFF2C6;
+    --success: #388E3C;
+    --light-success: #BBF7D0;
 }
 
-app-dashboard{
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    overflow-y: hidden;
-    overflow-x: hidden;
-    padding-left: 10px;  
-    padding-right: 10px;  
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
+
+html{
+    overflow-x: hidden;
+}
+
+body.dark{
+    --light: #181a1e;
+    --grey: #25252c;
+    --dark: #fbfbfb
+  }
+  
+body{
+    background: var(--grey);
+    overflow-x: hidden;
+  }

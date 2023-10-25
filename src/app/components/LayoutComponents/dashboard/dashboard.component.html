@@ -1,19 +1,52 @@
-<div class="row h-100">
-  <div class="col-2 px-0 side-nav h-100 d-flex flex-column bg-danger">
-    <div class="logo">
-      <img src="https://drive.google.com/uc?export=view&id=1K5mh7Su8gDn1GFndxA6ART_L6n6tQMFn" alt="Your Image Alt Text">
-    </div>    
-    <div class="flex-grow-1">
-      <app-sidebar></app-sidebar>
-    </div>
-    <div>footer</div>
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+      <a href="#" class="logo">
+          <img src="https://drive.google.com/uc?export=view&id=1bYUhRnjuYmQZ19bY96UvtqGE1oyI8nVH" alt="Your Image Alt Text">
+      </a>
+      <ul class="side-menu">
+        <li *ngFor="let link of links">
+            <a [class.active]="link.active" style="text-decoration: none;" [routerLink]="link.route" (click)="setActiveLink(link)">
+                <i class='bx {{link.icon}}'></i>{{ link.text }}
+              </a>
+        </li>
+      </ul>
+      <ul class="side-menu">
+          <li>
+              <a href="#" class="logout">
+                  <i class='bx bx-log-out-circle'></i>
+                  Logout
+              </a>
+          </li>
+      </ul>
   </div>
-  <div class="col-10 px-0 header-container h-100">
-    <div class="header-area">
-      <app-header></app-header>
-    </div>
-    <div class="full-body p-3">
-      <router-outlet></router-outlet>
-    </div>
+  <!-- End of Sidebar -->
+
+  <!-- Main Content -->
+  <div class="content">
+      <!-- Navbar -->
+      <nav>
+        <i class='bx bx-menu' (click)="toggleSidebar()"></i>
+        <form action="#">
+              <div class="form-input">
+                  <input type="search" placeholder="Search...">
+                  <button class="search-btn" type="submit"><i class='bx bx-search'></i></button>
+              </div>
+          </form>
+          <input type="checkbox" id="theme-toggle" (change)="toggleTheme()" hidden>
+          <label for="theme-toggle" class="theme-toggle"></label>
+          <a (click)="openNewSession()" class="notif">
+              <i class='bx bx-bell'></i>
+              <span class="count">12</span>
+          </a>
+          <a href="#" class="profile">
+              <img src="images/logo.png">
+          </a>
+      </nav>
+
+      <!-- End of Navbar -->
+
+      <main>
+        <router-outlet></router-outlet>
+      </main>
+
   </div>
-</div>
