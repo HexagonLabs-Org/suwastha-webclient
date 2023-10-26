@@ -274,7 +274,8 @@ li{
 .content main{
   width: 100%;
   padding: 36px 24px;
-  max-height: calc(100vh - 56px);
+  /* max-height: calc(100vh - 56px); */
+  background-color: var(--light-success);
 }
 
 .content main .header{
@@ -583,4 +584,24 @@ cursor: pointer;
       min-width: 340px;
   }
 
+}
+
+.scrolling-text-container {
+  overflow: hidden;
+  position: relative;
+}
+
+.scrolling-text {
+  white-space: nowrap;
+  animation: scrollText 20s linear infinite;
+  animation-delay: 1s;
+}
+
+@keyframes scrollText {
+  0% {
+      transform: translateX(100%);
+  }
+  100% {
+      transform: translateX(-100%);
+  }
 }

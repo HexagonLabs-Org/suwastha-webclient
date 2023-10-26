@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthSectionloginrequest } from 'src/app/Models/DTOs/auth-sectionloginrequest';
+import { AuthSectionloginresponse } from 'src/app/Models/DTOs/auth-sectionloginresponse';
+import { LoginService } from 'src/app/services/Auth-Services/login.service';
 
 @Component({
   selector: 'app-auth',
@@ -7,29 +10,24 @@ import { Router } from '@angular/router';
   styleUrls: ['./MainLogin.component.css']
 })
 export class MainLoginComponent {
-  constructor(private router: Router) {}
+  sectionLoginRequest: AuthSectionloginrequest = {
+    SectionID: '',
+    Password: ''
+  };
 
-  login(){
-    localStorage.setItem('jwtToken', "");
-  }
+  constructor(private router: Router,private loginService:LoginService) {}
 
-  goToClinic(){
-    localStorage.setItem('SectionType', "Clinic");
-    this.router.navigate(['/home']);
-  }
+  login() {
+    this.loginService.login(this.sectionLoginRequest)
+      .subscribe((response: AuthSectionloginresponse) => {
+        localStorage.setItem('JWT', response.Authentication.token);      
+        localStorage.setItem('Section', JSON.stringify(response.SectionLogin));
+        console.log(localStorage.getItem('JWT'));
+        console.log(localStorage.getItem('Section'));
 
-  goToOPD(){
-    localStorage.setItem('SectionType', "OPD");
-    this.router.navigate(['/home']);
-  }
-
-  goToETU(){
-    localStorage.setItem('SectionType', "ETU");
-    this.router.navigate(['/home']);
-  }
-
-  goToWard(){
-    localStorage.setItem('SectionType', "Ward");
-    this.router.navigate(['/home']);
+        this.router.navigate(['/home']);
+      }, (error) => {
+        console.error('Login error:', error);
+      });
   }
 }

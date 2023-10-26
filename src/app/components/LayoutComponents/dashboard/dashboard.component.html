@@ -26,12 +26,15 @@
       <!-- Navbar -->
       <nav>
         <i class='bx bx-menu' (click)="toggleSidebar()"></i>
-        <form action="#">
+        <!-- <form action="#">
               <div class="form-input">
                   <input type="search" placeholder="Search...">
                   <button class="search-btn" type="submit"><i class='bx bx-search'></i></button>
               </div>
-          </form>
+        </form> -->
+            <div class="Description scrolling-text-container">
+                <p class="scrolling-text">{{loggedInSection.title + ' - ' +loggedInSection.description}}</p>
+            </div>
           <input type="checkbox" id="theme-toggle" (change)="toggleTheme()" hidden>
           <label for="theme-toggle" class="theme-toggle"></label>
           <a (click)="openNewSession()" class="notif">

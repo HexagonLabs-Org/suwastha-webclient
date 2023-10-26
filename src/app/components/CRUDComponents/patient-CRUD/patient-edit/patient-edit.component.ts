@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Patient } from 'src/app/Models/Entities/patient.model';
-import { PatientService } from 'src/app/services/patient.service';
+import { PatientService } from 'src/app/services/CRUD-Services/patient.service';
 import { Location } from '@angular/common';
 
 @Component({

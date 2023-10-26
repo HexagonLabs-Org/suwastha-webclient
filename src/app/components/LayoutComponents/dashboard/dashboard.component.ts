@@ -1,23 +1,39 @@
-import { Component, ElementRef } from '@angular/core';
+import { Component, ElementRef, OnInit } from '@angular/core';
+import { SectionloginModel } from 'src/app/Models/Entities/sectionlogin.model';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent {
+export class DashboardComponent implements OnInit{
   havePrivilegeToUser : boolean = false;
+  loggedInSection : SectionloginModel = {
+    id: '',
+    sectionID: '',
+    rfid: null,
+    sectionType: '',
+    title: '',
+    description: ''
+  }
 
   constructor(private el: ElementRef) {}
 
-  SectionType = localStorage.getItem("SectionType");
+  ngOnInit(): void {
+    const storedObject = localStorage.getItem('Section');
+    console.log('section',storedObject)
+    if (storedObject !== null) {
+      this.loggedInSection = JSON.parse(storedObject);
+    } 
+  }
+
 
   openNewSession() {
-    if(this.SectionType == "Clinic"){
+    if(this.loggedInSection.sectionType == "Clinic"){
       const url = '/Clinic-Session';
       window.open(url, '_blank');
     }
-    else if(this.SectionType == "OPD"){
+    else if(this.loggedInSection.sectionType == "OPD"){
       const url = '/OPD-Session';
       window.open(url, '_blank');
     }
@@ -27,10 +43,10 @@ export class DashboardComponent {
   links = [
     { text: 'Dashboard', route: '/home' , havePrivilegeToUser:true, icon : 'bxs-dashboard' , active:false},
     { text: 'Profile', route: '/home/profile', havePrivilegeToUser:true, icon: 'bx-store-alt', active:true},
-    { text: 'Settings', route: '/home/settings', havePrivilegeToUser:true, icon: 'bx-analyse', active:false},
+    { text: 'Prescriptions', route: '/home/settings', havePrivilegeToUser:true, icon: 'bx-analyse', active:false},
     { text: 'Patients', route: '/home/patients', havePrivilegeToUser:true, icon: 'bx-message-square-dots', active:false},
     { text: 'Doctors', route: '/home/doctors', havePrivilegeToUser:true, icon: 'bx-group', active:false},
-    { text: 'Doctors', route: '/home/doctors', havePrivilegeToUser:true, icon: 'bx-cog', active:false}
+    { text: 'Settings', route: '/home/doctors', havePrivilegeToUser:true, icon: 'bx-cog', active:false}
   ];
 
 

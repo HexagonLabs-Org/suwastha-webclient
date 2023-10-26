@@ -2,9 +2,9 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { Doctor } from '../Models/Entities/doctor.model';
-import { AddDoctorRequest } from '../Models/DTOs/add-doctor-request.model';
-import { UpdateDoctorRequest } from '../Models/DTOs/update-doctor-request.model';
+import { Doctor } from '../../Models/Entities/doctor.model';
+import { AddDoctorRequest } from '../../Models/DTOs/add-doctor-request.model';
+import { UpdateDoctorRequest } from '../../Models/DTOs/update-doctor-request.model';
 
 @Injectable({
   providedIn: 'root'

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Doctor } from 'src/app/Models/Entities/doctor.model';
-import { DoctorService } from 'src/app/services/doctor.service';
+import { DoctorService } from 'src/app/services/CRUD-Services/doctor.service';
 
 @Component({
   selector: 'app-doctor-list',

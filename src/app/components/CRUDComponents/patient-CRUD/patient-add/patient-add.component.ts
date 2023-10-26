@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { AddPatientRequest } from 'src/app/Models/DTOs/add-patient-request.model';
 import { FormsModule } from '@angular/forms';
-import { PatientService } from 'src/app/services/patient.service';
+import { PatientService } from 'src/app/services/CRUD-Services/patient.service';
 import { Router } from '@angular/router';
 
 @Component({
