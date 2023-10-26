@@ -27,6 +27,7 @@ import { AdmissionListComponent } from './components/CRUDComponents/Admission-CR
 import { AdmissionAddComponent } from './components/CRUDComponents/Admission-CRUD/admission-add/admission-add.component';
 import { AdmissionEditComponent } from './components/CRUDComponents/Admission-CRUD/admission-edit/admission-edit.component';
 import { AdmissionDetailsComponent } from './components/CRUDComponents/Admission-CRUD/admission-details/admission-details.component';
+import { DoctorverificationComponent } from './components/AuthComponents/doctorverification/doctorverification.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -56,7 +57,8 @@ const routes: Routes = [
     path: 'OPD-Session', 
     component: OPDSessionLayoutComponent,
     children : [
-      { path: '', redirectTo: 'start', pathMatch: 'full' },
+      { path: '', redirectTo: 'doctor-verification', pathMatch: 'full' },
+      { path: 'doctor-verification', component: DoctorverificationComponent },
       { path: 'start', component: OPDSessionAddComponent },
       { path: ':id', component: OPDSessionDetailsComponent },
       { path: ':id/Prescription-Writer', component: PrescriptionAddComponent },                
@@ -66,8 +68,9 @@ const routes: Routes = [
     path: 'Clinic-Session', 
     component: ClinicsessionLayoutComponent,
     children : [
-      { path: '', redirectTo: 'start', pathMatch: 'full' },
-      { path: 'start', component: ClinicSessionAddComponent },  
+      { path: '', redirectTo: 'doctor-verification', pathMatch: 'full' },
+      { path: 'doctor-verification', component: DoctorverificationComponent }, 
+      { path: 'start', component: ClinicSessionAddComponent },
       { path: ':id', component: ClinicSessionDetailsComponent },
       { path: ':id/Book/Create', component: ClinicBookAddComponent },      
       { path: ':id/Book/:id', component: ClinicBookDetailsComponent },   

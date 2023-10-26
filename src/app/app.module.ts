@@ -46,6 +46,7 @@ import { AdmissionAddComponent } from './components/CRUDComponents/Admission-CRU
 import { AdmissionDetailsComponent } from './components/CRUDComponents/Admission-CRUD/admission-details/admission-details.component';
 import { AdmissionEditComponent } from './components/CRUDComponents/Admission-CRUD/admission-edit/admission-edit.component';
 import { AdmissionListComponent } from './components/CRUDComponents/Admission-CRUD/admission-list/admission-list.component';
+import { DoctorverificationComponent } from './components/AuthComponents/doctorverification/doctorverification.component';
 
 @NgModule({
   declarations: [
@@ -90,6 +91,7 @@ import { AdmissionListComponent } from './components/CRUDComponents/Admission-CR
     AdmissionDetailsComponent,
     AdmissionEditComponent,
     AdmissionListComponent,
+    DoctorverificationComponent,
   ],
   imports: [
     BrowserModule,

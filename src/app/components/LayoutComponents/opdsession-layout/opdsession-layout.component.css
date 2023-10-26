@@ -1,0 +1,7 @@
+.OPD-Session-Container {
+    height: 100vh; /* 100% of the viewport height */
+    overflow-y: auto; /* Enable vertical scrolling when content overflows vertically */
+    overflow-x: hidden;
+  }
+
+  
