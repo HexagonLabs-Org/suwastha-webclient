@@ -1,1 +1,24 @@
-<p>opdsession-add works!</p>
+<form>
+    <div class="form-group">
+      <label for="opdID">OPD ID</label>
+      <input type="text" class="form-control" id="opdID" name="opdID" [(ngModel)]="newOpdSession.opdID" required>
+    </div>
+    <div class="form-group">
+      <label for="doctorID">Doctor ID</label>
+      <input type="text" class="form-control" id="doctorID" name="doctorID" [(ngModel)]="newOpdSession.doctorID" required>
+    </div>
+    <div class="form-group">
+      <label for="startedAt">Started At</label>
+      <input type="date" class="form-control" id="startedAt" name="startedAt" [(ngModel)]="newOpdSession.startedAt" required>
+    </div>
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea class="form-control" id="description" name="description" [(ngModel)]="newOpdSession.description"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="specialNotes">Special Notes</label>
+      <textarea class="form-control" id="specialNotes" name="specialNotes" [(ngModel)]="newOpdSession.specialNotes"></textarea>
+    </div>
+    <button type="button" (click)="addOpdSession()" class="btn btn-primary">Start</button>
+  </form>
+  

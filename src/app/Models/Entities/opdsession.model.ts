@@ -1,4 +1,4 @@
-interface OpdsessionModel {
+export interface OpdsessionModel{
     id: string | null;
     sessionID: string | null;
     opdID: string | null;

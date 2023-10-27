@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-opdsession-details',
@@ -7,4 +8,12 @@ import { Component } from '@angular/core';
 })
 export class OPDSessionDetailsComponent {
 
+  constructor(
+    private router:Router,
+    private route:ActivatedRoute
+    ){}
+
+  goToPrescriptionWriter(){
+    this.router.navigate(['Prescription-Writer'], { relativeTo: this.route });
+  }
 }
