@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { Doctor } from 'src/app/Models/Entities/doctor.model';
 import { SectionloginModel } from 'src/app/Models/Entities/sectionlogin.model';
 import { DataService } from 'src/app/services/Shared-Services/data.service';
@@ -53,6 +53,11 @@ export class OPDSessionLayoutComponent implements OnInit {
         }
       });
     }
+  }
+
+  @HostListener('window:beforeunload', ['$event'])
+  onTabClose(event: BeforeUnloadEvent): void {
+    localStorage.removeItem('Doctor');
   }
 
   handleDoctorVerification(doctor: Doctor) {

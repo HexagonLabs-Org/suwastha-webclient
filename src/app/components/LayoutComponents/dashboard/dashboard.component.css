@@ -275,7 +275,10 @@ li{
   width: 100%;
   padding: 36px 24px;
   /* max-height: calc(100vh - 56px); */
-  background-color: var(--light-success);
+  /* background-color: var(--light-success); */
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .content main .header{

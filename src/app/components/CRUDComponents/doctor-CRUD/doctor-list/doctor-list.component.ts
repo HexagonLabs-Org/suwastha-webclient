@@ -23,7 +23,7 @@ export class DoctorListComponent implements OnInit {
   }
 
   deleteDoctor(doctor: Doctor) {
-    // Implement the logic to delete the doctor using the service method
+    if(doctor.id !== undefined)
     this.doctorService.deleteDoctor(doctor.id).subscribe(() => {
       // Optionally, update the doctors list or perform other actions after deletion
       this.loadDoctorList();
