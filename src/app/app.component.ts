@@ -18,6 +18,6 @@ export class AppComponent implements OnInit{
 
   @HostListener('window:beforeunload', ['$event'])
   onTabClose(event: BeforeUnloadEvent): void {
-    localStorage.clear();
+    //localStorage.clear();
   }
 }
