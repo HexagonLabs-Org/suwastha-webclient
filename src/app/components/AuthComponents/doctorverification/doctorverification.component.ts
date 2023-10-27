@@ -30,6 +30,7 @@ export class DoctorverificationComponent {
   constructor(private doctorService : DoctorService,private router:Router,private dataService : DataService){}
 
   verifyDoctor(){
+    if(this.doctor.doctorID !== undefined)
     this.doctorService.getDoctorByDoctorID(this.doctor.doctorID).subscribe(
       (doctor) => {
         this.doctor = doctor;
@@ -45,5 +46,6 @@ export class DoctorverificationComponent {
       },
       (error) => {
       }
-    );  }
+    );  
+  }
 }

@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="row justify-content-center align-items-center vh-100">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title text-center">Login</h2>
+                    <form>
+                        <div class="form-group">
+                            <label for="patientID">Patient ID</label>
+                            <input type="text" id="patientID" [(ngModel)]="this.patient.patientID" name="patientID"
+                                class="form-control" required />
+                        </div>
+                        <button type="button" (click)="verifyPatient()" class="btn btn-success col-12 my-2">
+                            Verify
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
