@@ -4,6 +4,7 @@ import { AddOpdsessionRequestModel } from 'src/app/Models/DTOs/add-opdsession-re
 import { Doctor } from 'src/app/Models/Entities/doctor.model';
 import { SectionloginModel } from 'src/app/Models/Entities/sectionlogin.model';
 import { OpdsessionService } from 'src/app/services/CRUD-Services/opdsession.service';
+import { DataService } from 'src/app/services/Shared-Services/data.service';
 
 @Component({
   selector: 'app-opdsession-add',
@@ -33,7 +34,8 @@ export class OPDSessionAddComponent implements OnInit{
   constructor(
     private opdsessionService: OpdsessionService,
     private router: Router,
-    private route : ActivatedRoute
+    private route : ActivatedRoute,
+    private dataService : DataService
     ){}
 
   ngOnInit(): void {
@@ -54,15 +56,18 @@ export class OPDSessionAddComponent implements OnInit{
   }
 
   addOpdSession(){
-    this.router.navigate(['f8d096d9-4523-4d27-ab2d-adaba7932ad6'], { relativeTo: this.route.parent });
-    // this.opdsessionService.addOPDSession(this.newOpdSession).subscribe(
-    //   (addedOpdSession) => {
-    //     this.router.navigate([addedOpdSession.id], { relativeTo: this.route.parent });
-    //   },
-    //   (error) => {
-    //     console.error('Error adding opdsession:', error);
-    //   }
-    // );
+    this.newOpdSession.startedAt = new Date();
+    this.newOpdSession.opdID = this.loggedInSection.sectionID;
+    this.opdsessionService.addOPDSession(this.newOpdSession).subscribe(
+      (addedOpdSession) => {
+        this.dataService.updateOPDSEssionData(addedOpdSession); 
+        this.router.navigate([addedOpdSession.id], { relativeTo: this.route.parent });
+
+      },
+      (error) => {
+        console.error('Error adding opdsession:', error);
+      }
+    );
   }
 
 

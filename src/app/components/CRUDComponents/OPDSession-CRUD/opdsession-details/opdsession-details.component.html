@@ -3,15 +3,15 @@
     <h2 class="mb-4">OPD Session Details</h2>
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title">Session ID: Session001</h5>
-        <p class="card-text pt-5">OPD ID: OPD001</p>
-        <p class="card-text pt-5">Doctor ID: Doctor001</p>
-        <p class="card-text pt-5">Started At: October 27, 2023, 10:00 AM</p>
-        <p class="card-text pt-5">Description: Sample Description</p>
-        <p class="card-text pt-5">Special Notes: Sample Special Notes</p>
-        <p class="card-text pt-5" *ngIf="true">Closed At: October 27, 2023, 02:00 PM</p>
-        <p class="card-text pt-5">Is Active: Yes</p>
-        <p class="card-text pt-5">Closing Note: Sample Closing Note</p>
+        <h5 class="card-title">Session ID: {{this.opdSession.sessionID }}</h5>
+        <p class="card-text pt-5">OPD ID: {{this.opdSession.opdid }}</p>
+        <p class="card-text pt-5">Doctor ID: {{this.opdSession.doctorID }}</p>
+        <p class="card-text pt-5">Started At: {{this.opdSession.startedAt }}</p>
+        <p class="card-text pt-5">Description: {{this.opdSession.description }}</p>
+        <p class="card-text pt-5">Special Notes: {{this.opdSession.specialNotes }}</p>
+        <p class="card-text pt-5" *ngIf="!this.opdSession.isActive">{{this.opdSession.sessionID }}</p>
+        <p class="card-text pt-5">Is Active: {{this.opdSession.isActive? 'Active':'Closed' }}</p>
+        <p class="card-text pt-5" *ngIf="!this.opdSession.isActive">Closing Note: {{this.opdSession.closingNote }}</p>
         
         <button class="btn btn-primary col-12 mt-3" (click)="goToPrescriptionWriter()">Go to prescription Writer</button>
       </div>
