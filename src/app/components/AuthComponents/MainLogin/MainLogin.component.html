@@ -1,24 +1,19 @@
-<div class="container">
-    <div class="row justify-content-center align-items-center vh-100">
-        <div class="col-md-6">
-            <div class="card">
-                <div class="card-body">
-                    <h2 class="card-title text-center">Login</h2>
-                    <form>
-                        <div class="form-group">
-                            <label for="sectionID">Section ID</label>
-                            <input type="text" id="sectionID" [(ngModel)]="sectionLoginRequest.SectionID"
-                                name="sectionID" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="password">Password</label>
-                            <input type="password" id="password" [(ngModel)]="sectionLoginRequest.Password"
-                                name="password" class="form-control" required>
-                        </div>
-                        <button type="button" (click)="login()" class="btn btn-primary btn-block">Login</button>
-                    </form>
-                </div>
+<div class="login-parent">
+    <div class="login-box">
+        <img src="https://drive.google.com/uc?export=view&id=1bYUhRnjuYmQZ19bY96UvtqGE1oyI8nVH" alt="Your Logo" class="logo">
+        <form>
+            <div class="user-box">
+                <input type="text" name="SectionID" required="" [(ngModel)]="sectionLoginRequest.SectionID">
+                <label for="SectionID">Username</label>
             </div>
-        </div>
+            <div class="user-box">
+                <input type="password" name="Password" required="" [(ngModel)]="sectionLoginRequest.Password">
+                <label for="password">Password</label>
+            </div>
+            <a type="button" (click)="login()" class="col-12 text-center">
+                LOGIN
+                <span></span>
+            </a>
+        </form>
     </div>
 </div>
