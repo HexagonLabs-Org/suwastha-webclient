@@ -36,6 +36,7 @@ export class OPDSessionLayoutComponent implements OnInit {
   constructor(private dataService: DataService){}
 
   ngOnInit(): void {
+    //localStorage.removeItem('Doctor');
     const storedSection = localStorage.getItem('Section');
     console.log('section', storedSection);
     if (storedSection !== null) {
@@ -46,19 +47,12 @@ export class OPDSessionLayoutComponent implements OnInit {
     if(storedDoctor !== null) {
       this.verifiedDoctor = JSON.parse(storedDoctor);
     }
-    else{
-      this.dataService.doctorData$.subscribe((doctor) => {
-        if (doctor) {
-          this.verifiedDoctor = doctor;
-        }
-      });
-    }
   }
 
-  @HostListener('window:beforeunload', ['$event'])
-  onTabClose(event: BeforeUnloadEvent): void {
-    localStorage.removeItem('Doctor');
-  }
+  // @HostListener('window:beforeunload', ['$event'])
+  // onTabClose(event: BeforeUnloadEvent): void {
+  //   localStorage.removeItem('Doctor');
+  // }
 
   handleDoctorVerification(doctor: Doctor) {
     this.verifiedDoctor = doctor;
