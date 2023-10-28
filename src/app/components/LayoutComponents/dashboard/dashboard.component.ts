@@ -1,5 +1,7 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { SectionloginModel } from 'src/app/Models/Entities/sectionlogin.model';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-dashboard',
@@ -17,7 +19,9 @@ export class DashboardComponent implements OnInit{
     description: ''
   }
 
-  constructor(private el: ElementRef) {}
+  constructor(
+    private el: ElementRef,
+    private router: Router) {}
 
   ngOnInit(): void {
     const storedObject = localStorage.getItem('Section');
@@ -83,7 +87,25 @@ export class DashboardComponent implements OnInit{
     console.log(this.isSidebarClosed);
   }
 
-  logout(){
-    localStorage.clear();
+  logout() {
+    Swal.fire({
+      title: 'Logout',
+      text: 'Are you sure you want to log out?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Yes, log out',
+      cancelButtonText: 'No, stay logged in',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // User confirmed, clear local storage or perform logout action
+        localStorage.clear();
+        this.router.navigate(['/']);
+        Swal.fire('Logged Out', 'You have been logged out.', 'success');
+      } else {
+        // User canceled, do nothing or handle it as needed
+        Swal.fire('Cancelled', 'You are still logged in.', 'info');
+      }
+    });
   }
+  
 }

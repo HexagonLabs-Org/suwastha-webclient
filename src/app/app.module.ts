@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { ToastrModule } from 'ngx-toastr';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -49,6 +50,7 @@ import { AdmissionEditComponent } from './components/CRUDComponents/Admission-CR
 import { AdmissionListComponent } from './components/CRUDComponents/Admission-CRUD/admission-list/admission-list.component';
 import { DoctorverificationComponent } from './components/AuthComponents/doctorverification/doctorverification.component';
 import { PatientverificationComponent } from './components/AuthComponents/patientverification/patientverification.component';
+import { TextToSpeechService } from './services/Speech-Services/text-to-speech.service';
 
 @NgModule({
   declarations: [
@@ -102,10 +104,22 @@ import { PatientverificationComponent } from './components/AuthComponents/patien
     HttpClientModule,
     FormsModule,
     NgxSpinnerModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      timeOut: 3000, // Display duration in milliseconds
+      positionClass: 'toast-bottom-center', // Toast position on the screen
+      closeButton: false, // Show close button
+      progressBar: true, // Display a progress bar
+      preventDuplicates: true, //  Prevent duplicate toasts
+      newestOnTop: true, // Show the newest toast on top
+      maxOpened: 5, // Maximum number of toasts displayed at once
+      autoDismiss: true, // Automatically dismiss the toast after the timeout
+      extendedTimeOut: 1000, // Additional time for extended timeouts
+      tapToDismiss : true, // Close the toast when the user clicks it
+    })
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  providers: [],
+  providers: [TextToSpeechService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
