@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "ng-modelsfor": "node -e \"const entityName = process.argv[1]; require('child_process').execSync('ng generate interface models/entities/' + entityName + '.model', { stdio: [0, 1, 2] }); require('child_process').execSync('ng generate interface models/DTOs/add-' + entityName + '-request.model', { stdio: [0, 1, 2] }); require('child_process').execSync('ng generate interface models/DTOs/update-' + entityName + '-request.model', { stdio: [0, 1, 2] });\"",
+    "ng-m-4": "node -e \"const entityName = process.argv[1]; require('child_process').execSync('ng generate interface models/entities/' + entityName + '.model', { stdio: [0, 1, 2] }); require('child_process').execSync('ng generate interface models/DTOs/add-' + entityName + '-request.model', { stdio: [0, 1, 2] }); require('child_process').execSync('ng generate interface models/DTOs/update-' + entityName + '-request.model', { stdio: [0, 1, 2] });\"",
     "ng-auth-s-4": "node -e \"require('child_process').execSync('ng generate service services/Auth-Service/' + process.argv[1], { stdio: [0, 1, 2] });\"",
     "ng-crud-s-4": "node -e \"require('child_process').execSync('ng generate service services/CRUD-Services/' + process.argv[1], { stdio: [0, 1, 2] });\"",
     "ng-srd-s-4": "node -e \"require('child_process').execSync('ng generate service services/Shared-Services/' + process.argv[1], { stdio: [0, 1, 2] });\"",
