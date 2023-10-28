@@ -20,15 +20,7 @@ export class OPDSessionAddComponent implements OnInit{
     specialNotes: null
   }
 
-  loggedInSection: SectionloginModel = {
-    id: '',
-    sectionID: '',
-    rfid: null,
-    sectionType: '',
-    title: '',
-    description: ''
-  }
-
+  loggedInSection: SectionloginModel = {}
   verifiedDoctor : Doctor = {}
 
   constructor(
@@ -44,6 +36,7 @@ export class OPDSessionAddComponent implements OnInit{
     if(loggedInSection !== null)
     {
       this.loggedInSection = JSON.parse(loggedInSection);
+      if(this.loggedInSection.sectionID)
       this.newOpdSession.opdID = this.loggedInSection.sectionID;
     }
 
@@ -57,9 +50,11 @@ export class OPDSessionAddComponent implements OnInit{
 
   addOpdSession(){
     this.newOpdSession.startedAt = new Date();
+    if(this.loggedInSection.sectionID)
     this.newOpdSession.opdID = this.loggedInSection.sectionID;
     this.opdsessionService.addOPDSession(this.newOpdSession).subscribe(
       (addedOpdSession) => {
+        localStorage.setItem("CurrentSession" , JSON.stringify(addedOpdSession))
         this.dataService.updateOPDSEssionData(addedOpdSession); 
         this.router.navigate([addedOpdSession.id], { relativeTo: this.route.parent });
 

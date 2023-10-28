@@ -13,7 +13,6 @@ import { DoctorListComponent } from './components/CRUDComponents/doctor-CRUD/doc
 import { DoctorAddComponent } from './components/CRUDComponents/doctor-CRUD/doctor-add/doctor-add.component';
 import { DoctorDetailsComponent } from './components/CRUDComponents/doctor-CRUD/doctor-details/doctor-details.component';
 import { DoctorEditComponent } from './components/CRUDComponents/doctor-CRUD/doctor-edit/doctor-edit.component';
-import { PrescriptionAddComponent } from './components/CRUDComponents/Prescription-CRUD/prescription-add/prescription-add.component';
 import { OPDSessionAddComponent } from './components/CRUDComponents/OPDSession-CRUD/opdsession-add/opdsession-add.component';
 import { ClinicSessionAddComponent } from './components/CRUDComponents/ClinicSession-CRUD/clinic-session-add/clinic-session-add.component';
 import { ClinicsessionLayoutComponent } from './components/LayoutComponents/clinicsession-layout/clinicsession-layout.component';
@@ -28,6 +27,7 @@ import { AdmissionAddComponent } from './components/CRUDComponents/Admission-CRU
 import { AdmissionEditComponent } from './components/CRUDComponents/Admission-CRUD/admission-edit/admission-edit.component';
 import { AdmissionDetailsComponent } from './components/CRUDComponents/Admission-CRUD/admission-details/admission-details.component';
 import { DoctorverificationComponent } from './components/AuthComponents/doctorverification/doctorverification.component';
+import { PrescriptionOpdAddComponent } from './components/CRUDComponents/PrescriptionOpd-CRUD/prescription-opd-add/prescription-opd-add.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -61,7 +61,7 @@ const routes: Routes = [
       { path: 'doctor-verification', component: DoctorverificationComponent },
       { path: 'start', component: OPDSessionAddComponent },
       { path: ':id', component: OPDSessionDetailsComponent },
-      { path: ':id/Prescription-Writer', component: PrescriptionAddComponent },                
+      { path: ':id/Prescription-Writer', component: PrescriptionOpdAddComponent },                
     ]
   },
   { 

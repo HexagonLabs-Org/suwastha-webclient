@@ -1,0 +1,116 @@
+<div class="container mt-5">
+    <h2>Add New Prescription</h2>
+    <form (ngSubmit)="addPrescription()" #prescriptionForm="ngForm">
+        <div class="form-group">
+            <label for="prescriptionId">Prescription ID</label>
+            <input type="text" class="form-control" id="prescriptionId" [(ngModel)]="newPrescription.prescriptionId"
+                name="prescriptionId" required>
+        </div>
+        <div class="form-group">
+            <label for="patientID">Patient ID</label>
+            <input type="text" class="form-control" id="patientID" [(ngModel)]="newPrescription.patientID"
+                name="patientID" required>
+        </div>
+        <div class="form-group">
+            <label for="age">Age</label>
+            <input type="number" class="form-control" id="age" [(ngModel)]="newPrescription.age" name="age" required>
+        </div>
+        <div class="form-group">
+            <label for="gender">Gender</label>
+            <select class="form-control" id="gender" [(ngModel)]="newPrescription.gender" name="gender" required>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="doctorID">Doctor ID</label>
+            <input type="text" class="form-control" id="doctorID" [(ngModel)]="newPrescription.doctorID" name="doctorID"
+                required>
+        </div>
+        <div class="form-group">
+            <label for="opdID">OPD ID</label>
+            <input type="text" class="form-control" id="opdID" [(ngModel)]="newPrescription.opdID" name="opdID"
+                required>
+        </div>
+        <div class="form-group">
+            <label for="sessionID">Session ID</label>
+            <input type="text" class="form-control" id="sessionID" [(ngModel)]="newPrescription.sessionID"
+                name="sessionID" required>
+        </div>
+        <div class="form-group">
+            <label for="date">Date</label>
+            <input type="date" class="form-control" id="date" [(ngModel)]="newPrescription.date" name="date" required>
+        </div>
+        <div class="form-group">
+            <label for="note">Note</label>
+            <textarea class="form-control" id="note" [(ngModel)]="newPrescription.note" name="note"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="startDate">Start Date</label>
+            <input type="date" class="form-control" id="startDate" [(ngModel)]="newPrescription.startDate"
+                name="startDate" required>
+        </div>
+        <div class="form-group">
+            <label for="endDate">End Date</label>
+            <input type="date" class="form-control" id="endDate" [(ngModel)]="newPrescription.endDate" name="endDate"
+                required>
+        </div>
+        <div class="form-group">
+            <label for="noOfDates">Number of Dates</label>
+            <input type="number" class="form-control" id="noOfDates" [(ngModel)]="newPrescription.noOfDates"
+                name="noOfDates" required>
+        </div>
+        <div class="form-group">
+            <label for="refills">Refills</label>
+            <input type="number" class="form-control" id="refills" [(ngModel)]="newPrescription.refills" name="refills"
+                required>
+        </div>
+
+        <h3>Add Medication</h3>
+        <form (ngSubmit)="addMedication()" #medicationForm="ngForm">
+            <div class="form-group">
+                <label for="medicationName">Medication Name</label>
+                <input type="text" class="form-control" id="medicationName" [(ngModel)]="medication.medicationName"
+                    name="medicationName" required>
+            </div>
+            <div class="form-group">
+                <label for="dosage">Dosage</label>
+                <input type="text" class="form-control" id="dosage" [(ngModel)]="medication.dosage" name="dosage"
+                    required>
+            </div>
+            <div class="form-group">
+                <label for="frequency">Frequency</label>
+                <input type="text" class="form-control" id="frequency" [(ngModel)]="medication.frequency"
+                    name="frequency" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Add Medication</button>
+        </form>
+
+        <button type="button" class="btn btn-warning" (click)="clearMedications()">Clear All Medication</button>
+
+        <h3>Medications List</h3>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Medication Name</th>
+                    <th>Dosage</th>
+                    <th>Frequency</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let medication of newMedications" (click)="loadMedicationToForm(medication)">
+                    <td>{{ medication.medicationName }}</td>
+                    <td>{{ medication.dosage }}</td>
+                    <td>{{ medication.frequency }}</td>
+                    <td><button (click)="removeMedication(medication)">Remove</button></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Add more input fields for other properties of Prescription_OPD_Medications -->
+
+        <button type="submit" class="btn btn-primary">Add Prescription</button>
+    </form>
+</div>

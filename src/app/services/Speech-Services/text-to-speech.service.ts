@@ -85,7 +85,7 @@ export class TextToSpeechService {
       this.requestPermission(); // Request permission before speaking the welcome message
     }
 
-    const welcomeMessage = "Hey Welcome.  You have the option to access the system either by entering your username and password or by using your ID for quick acces";
+    const welcomeMessage = "Hey Welcome.  You have the option to access the system either by entering your username and password or by using your ID ";
   
     return this.speak(welcomeMessage);
   }

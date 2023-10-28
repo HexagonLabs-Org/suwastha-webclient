@@ -21,10 +21,6 @@ import { DoctorAddComponent } from './components/CRUDComponents/doctor-CRUD/doct
 import { DoctorDetailsComponent } from './components/CRUDComponents/doctor-CRUD/doctor-details/doctor-details.component';
 import { DoctorEditComponent } from './components/CRUDComponents/doctor-CRUD/doctor-edit/doctor-edit.component';
 import { DoctorListComponent } from './components/CRUDComponents/doctor-CRUD/doctor-list/doctor-list.component';
-import { PrescriptionAddComponent } from './components/CRUDComponents/Prescription-CRUD/prescription-add/prescription-add.component';
-import { PrescriptionDetailsComponent } from './components/CRUDComponents/Prescription-CRUD/prescription-details/prescription-details.component';
-import { PrescriptionEditComponent } from './components/CRUDComponents/Prescription-CRUD/prescription-edit/prescription-edit.component';
-import { PrescriptionListComponent } from './components/CRUDComponents/Prescription-CRUD/prescription-list/prescription-list.component';
 import { OPDSessionAddComponent } from './components/CRUDComponents/OPDSession-CRUD/opdsession-add/opdsession-add.component';
 import { OPDSessionDetailsComponent } from './components/CRUDComponents/OPDSession-CRUD/opdsession-details/opdsession-details.component';
 import { OPDSessionEditComponent } from './components/CRUDComponents/OPDSession-CRUD/opdsession-edit/opdsession-edit.component';
@@ -51,6 +47,10 @@ import { AdmissionListComponent } from './components/CRUDComponents/Admission-CR
 import { DoctorverificationComponent } from './components/AuthComponents/doctorverification/doctorverification.component';
 import { PatientverificationComponent } from './components/AuthComponents/patientverification/patientverification.component';
 import { TextToSpeechService } from './services/Speech-Services/text-to-speech.service';
+import { PrescriptionOpdAddComponent } from './components/CRUDComponents/PrescriptionOpd-CRUD/prescription-opd-add/prescription-opd-add.component';
+import { PrescriptionOpdDetailsComponent } from './components/CRUDComponents/PrescriptionOpd-CRUD/prescription-opd-details/prescription-opd-details.component';
+import { PrescriptionOpdEditComponent } from './components/CRUDComponents/PrescriptionOpd-CRUD/prescription-opd-edit/prescription-opd-edit.component';
+import { PrescriptionOpdListComponent } from './components/CRUDComponents/PrescriptionOpd-CRUD/prescription-opd-list/prescription-opd-list.component';
 
 @NgModule({
   declarations: [
@@ -69,10 +69,6 @@ import { TextToSpeechService } from './services/Speech-Services/text-to-speech.s
     DoctorDetailsComponent,
     DoctorEditComponent,
     DoctorListComponent,
-    PrescriptionAddComponent,
-    PrescriptionDetailsComponent,
-    PrescriptionEditComponent,
-    PrescriptionListComponent,
     OPDSessionAddComponent,
     OPDSessionDetailsComponent,
     OPDSessionEditComponent,
@@ -97,6 +93,10 @@ import { TextToSpeechService } from './services/Speech-Services/text-to-speech.s
     AdmissionListComponent,
     DoctorverificationComponent,
     PatientverificationComponent,
+    PrescriptionOpdAddComponent,
+    PrescriptionOpdDetailsComponent,
+    PrescriptionOpdEditComponent,
+    PrescriptionOpdListComponent,
   ],
   imports: [
     BrowserModule,
