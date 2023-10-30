@@ -1,3 +1,5 @@
+import { PrescriptionOpdMedicationModel } from "./prescription-opd-medication.model";
+
 export interface PrescriptionOpdModel {
     id?: string; 
     prescriptionId?: string;
@@ -13,14 +15,5 @@ export interface PrescriptionOpdModel {
     endDate?: Date;
     noOfDates?: number;
     refills?: number;
-    prescriptionMedications?: Prescription_OPD_Medication[]; 
+    medications?: PrescriptionOpdMedicationModel[]; 
 }
-
-export interface Prescription_OPD_Medication {
-    id?: string; 
-    prescriptionId?: string;
-    medicationName?: string;
-    dosage?: string;
-    frequency?: string;
-}
-  
